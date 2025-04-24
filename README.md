@@ -65,36 +65,32 @@ This R script processes raw mortality records for people experiencing homelessne
 
 You can install missing packages with:
 
-```r
+
 install.packages(c("tidyverse", "lubridate"))
 
 
 Usage
-Clone the repo
+1. Clone the repo
 
-bash
-Copy
-Edit
+
 git clone https://github.com/<your-username>/unhoused-mortality-scc.git
 cd unhoused-mortality-scc
-Prepare your data
+
+2. Prepare your data
 Place homeless_deaths.csv in the project root, or adjust the read_csv() path in each script.
 
-Run the sorter
+3. Run the sorter
 
-r
-Copy
-Edit
 source("sort_unhoused_deaths.R")
 # result: `master` dataframe in your R environment
 write_csv(master, "unhoused_deaths_classified.csv")
-Run the analyzer
 
-r
-Copy
-Edit
+4. Run the analyzer
+
+
 source("analyze_unhoused_deaths.R")
 # produces ggplot figures in your R plotting pane
+
 Script Details
 1. sort_unhoused_deaths.R
 Purpose: Read the raw CSV, standardize column names, parse and filter dates (2019–2023), assign demographic bins (age, race/ethnicity), then sequentially extract decedents by:
@@ -117,11 +113,10 @@ Substance
 
 Output: master dataframe with columns:
 
-sql
-Copy
-Edit
+
 case_number, Age, Age_Group, Gender, Race_Ethnicity, year,
 Cause, cause_of_death, other_significant_condition
+
 2. analyze_unhoused_deaths.R
 Purpose: Take each subset created by the sorter (accident_related_cases, chronic_related_cases, infection_related_cases, overdose_related_cases) and:
 
