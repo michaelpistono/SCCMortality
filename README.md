@@ -27,11 +27,6 @@ This repository contains two R scripts to process and analyze mortality records 
 
 # Unhoused Mortality Data Sorting Algorithm
 
-**Author:** Michael Pistono  
-**Date:** February 1, 2025
-
----
-
 ## Overview
 
 This R script processes raw mortality records for people experiencing homelessness in Santa Clara County (SCC) and classifies each death into mutually exclusive cause‐of‐death categories. The output is a “master” dataframe that can be used for downstream analyses, visualization, or export.
